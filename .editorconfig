@@ -1,0 +1,23 @@
+# .editorconfigのトップレベル設定
+root = true
+
+# すべてのファイルに適用されるデフォルト設定
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 2
+
+# Markdownファイルは、末尾の空白が意味を持つことがあるため、trim_trailing_whitespaceを無効にする
+[*.md]
+trim_trailing_whitespace = false
+
+# Pythonファイル用の設定
+[*.py]
+indent_size = 2
+
+# JavaScript、JSON、JSXファイル用の設定
+[*.{js,json,jsx}]
+indent_size = 2

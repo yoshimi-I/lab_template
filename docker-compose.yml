@@ -1,0 +1,9 @@
+version: '3.8'
+services:
+  python:
+    build:
+      context: .
+      dockerfile: ./docker/python/${PYTHON_VERSION}/Dockerfile
+    volumes:
+      - .:/data_lab
+    working_dir: /data_lab

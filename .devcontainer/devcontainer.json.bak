@@ -1,0 +1,128 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/python
+{
+	"name": "Python",
+	"build": {
+		"context": "..",
+		"dockerfile": "../docker/python/3.12/Dockerfile"
+	},
+  "mounts": [
+    "source=${localWorkspaceFolder}/docker/python/3.12/pyproject.toml,target=/workspaces/DataLab_Python/pyproject.toml,type=bind,consistency=cached",
+    "source=${localWorkspaceFolder}/docker/python/3.12/poetry.lock,target=/workspaces/DataLab_Python/poetry.lock,type=bind,consistency=cached"
+  ],
+	"customizations": {
+		"vscode": {
+			"extensions": [
+        "aprilandjan.ascii-tree-generator",
+        "codezombiech.gitignore",
+        "eamodio.gitlens",
+        "EditorConfig.EditorConfig",
+        "esbenp.prettier-vscode",
+        "formulahendry.auto-rename-tag",
+        "gencay.vscode-chatgpt",
+        "GitHub.copilot",
+        "GitHub.copilot-chat",
+        "mosapride.zenkaku",
+        "MS-CEINTL.vscode-language-pack-ja",
+        "ms-python.debugpy",
+        "ms-python.isort",
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-toolsai.jupyter",
+        "ms-toolsai.jupyter-keymap",
+        "ms-toolsai.jupyter-renderers",
+        "ms-toolsai.vscode-jupyter-cell-tags",
+        "ms-toolsai.vscode-jupyter-slideshow",
+        "ms-vscode-remote.remote-containers",
+        "ms-vscode-remote.remote-ssh",
+        "ms-vscode-remote.remote-ssh-edit",
+        "ms-vsliveshare.vsliveshare",
+        "oderwat.indent-rainbow",
+        "pmneo.tsimporter",
+        "qwtel.sqlite-viewer",
+        "rangav.vscode-thunder-client",
+        "redhat.vscode-yaml",
+        "ritwickdey.LiveServer",
+        "ryu1kn.partial-diff",
+        "steoates.autoimport",
+        "streetsidesoftware.code-spell-checker",
+        "styled-components.vscode-styled-components",
+        "twxs.cmake",
+        "vscode-icons-team.vscode-icons",
+        "dbaeumer.vscode-eslint",
+        "charliermarsh.ruff",
+        "GitHub.copilot-labs",
+        "ms-azuretools.vscode-docker"
+      ],
+      "settings":{
+        "python.linting.enabled": true,
+        "python.linting.ruffEnabled": true,
+        "python.linting.ruffPath": "ruff",
+        "[markdown]": {
+          "files.trimTrailingWhitespace": false
+        },
+        "[python]": {
+          "editor.formatOnSaveMode": "file",
+          "editor.formatOnSave": true,
+          "editor.codeActionsOnSave": {
+            "source.fixAll.ruff": true,
+            "source.organizeImports.ruff": true
+          }
+        },
+        "cSpell.userWords": ["chatgpt", "Monokai", "techtrain"],
+        "editor.acceptSuggestionOnEnter": "on",
+        "editor.accessibilitySupport": "off",
+        "editor.copyWithSyntaxHighlighting": false,
+        "editor.dragAndDrop": false,
+        "editor.fontSize": 12,
+        "editor.formatOnSave": false,
+        "editor.inlineSuggest.enabled": true,
+        "editor.snippetSuggestions": "top",
+        "editor.suggest.preview": true,
+        "editor.suggest.showMethods": true,
+        "editor.suggestSelection": "first",
+        "editor.tabSize": 2,
+        "editor.wordWrap": "on",
+        "emmet.includeLanguages": {
+          "erb": "html"
+        },
+        "emmet.triggerExpansionOnTab": true,
+        "emmet.variables": {
+          "lang": "ja"
+        },
+        "files.associations": {
+          "*.erb": "erb"
+        },
+        "files.autoGuessEncoding": true,
+        "files.autoSave": "afterDelay",
+        "files.eol": "\n",
+        "files.exclude": {
+          "**/.DS_Store": true,
+          "**/.git": true,
+          "**/.hg": true,
+          "**/.svn": true,
+          "**/CVS": true
+        },
+        "jupyter.experimental.debugging": true,
+        "files.insertFinalNewline": true,
+        "files.trimFinalNewlines": true,
+        "files.trimTrailingWhitespace": true,
+        "python.linting.flake8Args": ["--ignore=E501"],
+        "python.linting.flake8Enabled": true,
+        "techtrain-railway.optOutTelemetry": false,
+        "terminal.external.osxExec": "warp.app",
+        "terminal.integrated.inheritEnv": false,
+        "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}",
+        "workbench.activityBar.visible": true,
+        "workbench.colorTheme": "Monokai Pro (Filter Spectrum)",
+        "workbench.iconTheme": "material-icon-theme",
+        "terminal.integrated.env.osx": {
+          "FIG_NEW_SESSION": "1"
+        },
+        "terminal.integrated.fontFamily": "AurulentSansM Nerd Font",
+        "window.zoomLevel": 1,
+        "hediet.vscode-drawio.resizeImages": null
+      }
+		}
+	}
+}

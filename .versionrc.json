@@ -1,0 +1,61 @@
+{
+  "types": [
+    {
+      "type": "chore",
+      "section": "ビルドプロセスまたは補助ツールの変更",
+      "hidden": false
+    },
+    {
+      "type": "feat",
+      "section": "新機能",
+      "hidden": false
+    },
+    {
+      "type": "fix",
+      "section": "バグ修正",
+      "hidden": false
+    },
+    {
+      "type": "docs",
+      "section": "ドキュメント",
+      "hidden": false
+    },
+    {
+      "type": "style",
+      "section": "コードスタイル",
+      "hidden": false
+    },
+    {
+      "type": "refactor",
+      "section": "リファクタリング",
+      "hidden": false
+    },
+    {
+      "type": "perf",
+      "section": "パフォーマンスの向上",
+      "hidden": false
+    },
+    {
+      "type": "test",
+      "section": "テストの追加・修正",
+      "hidden": false
+    },
+    {
+      "type": "ci",
+      "section": "CI関連",
+      "hidden": false
+    },
+    {
+      "type": "config",
+      "section": "設定ファイル",
+      "hidden": false
+    },
+    {
+      "type": "package",
+      "section": "パッケージ",
+      "hidden": false
+    }
+  ],
+
+  "releaseCommitMessageFormat": "chore(release): 🏹{{currentTag}}"
+}

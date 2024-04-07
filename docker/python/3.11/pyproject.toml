@@ -1,0 +1,90 @@
+[tool.poetry]
+name = "3-11"
+version = "0.1.0"
+description = ""
+authors = ["yoshimi-I <iwatsuki.443@outlook.com>"]
+readme = "../../../README.md"
+packages = [{include = "3"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+ruff = "^0.2.2"
+
+[build-system]
+requires = ["lint.poetry-core"]
+build-backend = "lint.poetry.core.masonry.api"
+
+
+[tool.mypy]
+strict = true
+lint.ignore_missing_imports = true
+
+
+extend-include = ["*.ipynb"]
+
+
+[tool.ruff]
+target-version = "py38"
+
+format.indent-style="tab"
+
+lint.ignore = [
+    "G004", # `logging-f-string` : loggingでf-stringを使いたいので無視する
+    "PD901", #すでに`df`という変数をいろんなところで使っているため
+    "PD002", #すでにpandasで`inplace=True`はいろんなところで使っているため
+    "RUF001", # 全角記号など`ambiguous unicode character`も使いたいため
+    "RUF002",# 全角記号など`ambiguous unicode character`も使いたいため
+    "RUF003",# 全角記号など`ambiguous unicode character`も使いたいため
+    "PLC1901", # compare-to-empty-string : `if a == "`のように空文字列で直接比較したいときがあるため
+    "PLR2004", # magic-value-comparison: listのサイズで判定するときがよくあるため
+    "ANN101", # pylintmissing-type-self: 引数selfには型ヒントは付けていないため
+    "ANN102", # missing-type-cls: 引数clsには型ヒントは付けていないため
+    "ANN002", # missing-type-args
+    "ANN003", # missing-type-kwargs
+    "ERA", # : 役立つこともあるが、コメントアウトしていないコードも警告されるので無視する
+
+    # いずれ無視しないようにする
+    "ANN201", # missing-return-type-public-function:
+    "ANN202", # missing-return-type-private-function:
+    "PLR",  # pylint Refactor
+
+    # 以下のルールはannofabcliのコードに合っていないので無効化した
+    "RSE", # flake8-raise
+    "D", # pydocstyle, Docstringを中途半端にしか書いていないので、除外する
+    "C90", # mccabe
+    "T20", # flake8-print
+    "SLF", #  flake8-self
+    "BLE", # flake8-blind-except
+    "FBT", # flake8-boolean-trap
+    "TRY", # tryceratops
+    "COM", # flake8-commas
+    "S", # flake8-bandit
+    "EM",#flake8-errmsg
+    "EXE", # flake8-executable
+    "ICN", # flake8-import-conventions
+    "RET",#flake8-return
+    "SIM",#flake8-simplify
+    "TCH", # flake8-type-checking
+    "PTH", #pathlibを使わないコードが多いので、除外する
+    "ISC", #flake8-implicit-str-concat
+    "N", # pep8-naming
+    "PT", # flake8-pytest-style
+]
+
+line-length = 120
+lint.select = [
+    "ALL"
+]
+
+[tool.ruff.lint.pydocstyle]
+# pydocstyleを無視しているのでこの設定は無意味だが、
+# 社内ツールのdocstringのスタイルは決まっているので、設定だけしておく
+convention = "google"
+
+[tool.ruff.lint.pyupgrade]
+# Python3.8をサポートしているため、`typing.List`などの型ヒントは警告しないようにする
+# https://beta.ruff.rs/docs/settings/#keep-runtime-typing
+keep-runtime-typing = true
+
+[tool.ruff.lint.pylint]
+max-args = 10
