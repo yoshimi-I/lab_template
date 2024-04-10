@@ -96,8 +96,8 @@
 ### 2. リポジトリをforkしてくる
 ### 3. フォークしたリポジトリを自分のPCにマージしてくる
 ```git clone フォークするリポジトリ```
-- 以下の動画を参考にしてcloneしてください
-https://www.loom.com/share/f8eb2d101e114cbc9d5f6352e1e1bb10
+**以下の動画を参考にしてcloneしてください**
+- https://www.loom.com/share/f8eb2d101e114cbc9d5f6352e1e1bb10
 ## pythonの起動方法<a id="anchor3"></a>
 ### 1. まずはPythonのバージョンを選択
 - デフォルトは3.12になっています
