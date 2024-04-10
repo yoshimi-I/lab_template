@@ -6,6 +6,16 @@
 		"context": "..",
 		"dockerfile": "../docker/python/3.12/Dockerfile"
 	},
+  // If you want to use GPU, uncomment the following
+	// "runArgs": [
+	// 	"--gpus",
+	// 	"all"
+	// ],
+	// "features": {
+	// 	"ghcr.io/devcontainers/features/nvidia-cuda": {
+	// 		"cudaVersion": 11.8
+	// 	}
+	// },
   "mounts": [
     "source=${localWorkspaceFolder}/docker/python/3.12/pyproject.toml,target=/workspaces/DataLab_Python/pyproject.toml,type=bind,consistency=cached",
     "source=${localWorkspaceFolder}/docker/python/3.12/poetry.lock,target=/workspaces/DataLab_Python/poetry.lock,type=bind,consistency=cached",
