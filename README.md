@@ -109,8 +109,8 @@ https://www.loom.com/share/f8eb2d101e114cbc9d5f6352e1e1bb10?sid=fc6feab7-959a-4b
 ## その他各コマンドの説明<a id="anchor4"></a>
 ### パッケージの追加
 - 本来は**pip install** などを利用するが,今回はpoetryを採用した
-- **make add パッケージ名**とすることでパッケージを追加できる
-  - 例) ``` make add numpy```
+- **poetry add パッケージ名**とすることでパッケージを追加できる
+  - 例) ``` poetry add numpy```
 ### コードを整形する場合
 ```make fix```
   - デフォルトではフォーマッターが整備されているため,ルールを守らないと,赤いエラーが吐かれる
