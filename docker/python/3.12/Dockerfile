@@ -18,7 +18,6 @@ COPY ./docker/python/${PYTHON_VERSION}/poetry.lock /workspaces/lab_template/dock
 RUN ln -s /workspaces/lab_template/docker/python/${PYTHON_VERSION}/pyproject.toml /workspaces/lab_template/pyproject.toml && \
     ln -s /workspaces/lab_template/docker/python/${PYTHON_VERSION}/poetry.lock /workspaces/lab_template/poetry.lock
 
-
 RUN poetry config virtualenvs.create false \
     && poetry install --no-interaction --no-ansi --no-dev
 
