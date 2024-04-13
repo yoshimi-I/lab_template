@@ -16,14 +16,11 @@
 	// 		"cudaVersion": 11.8
 	// 	}
 	// },
+
   "mounts": [
-    "source=${localWorkspaceFolder}/docker/python/3.12/pyproject.toml,target=/workspaces/DataLab_Python/pyproject.toml,type=bind,consistency=cached",
-    "source=${localWorkspaceFolder}/docker/python/3.12/poetry.lock,target=/workspaces/DataLab_Python/poetry.lock,type=bind,consistency=cached",
-    {
-      "source": "${localEnv:HOME}/.config/git",
-			"target": "/home/vscode/.config/git",
-			"type": "bind"
-    }
+    "source=${localWorkspaceFolder}/docker/python/3.12/pyproject.toml,target=/workspaces/lab_template/pyproject.toml,type=bind,consistency=cached",
+    "source=${localWorkspaceFolder}/docker/python/3.12/poetry.lock,target=/workspaces/lab_template/poetry.lock,type=bind,consistency=cached",
+    "source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind"
   ],
 	"customizations": {
 		"vscode": {

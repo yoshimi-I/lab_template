@@ -2,16 +2,22 @@ FROM python:3.12-slim
 
 ENV PYTHON_VERSION=3.12
 
-WORKDIR /workspaces/DataLab_Python
+WORKDIR /workspaces/lab_template
 
 RUN pip install poetry
 
 # 既存のファイルを削除
-RUN if [ -f /workspaces/DataLab_Python/pyproject.toml ]; then rm /workspaces/DataLab_Python/pyproject.toml; fi && \
-    if [ -f /workspaces/DataLab_Python/poetry.lock ]; then rm /workspaces/DataLab_Python/poetry.lock; fi
+RUN if [ -f /workspaces/lab_template/pyproject.toml ]; then rm /workspaces/lab_template/pyproject.toml; fi && \
+    if [ -f /workspaces/lab_template/poetry.lock ]; then rm /workspaces/lab_template/poetry.lock; fi
 
 # 新しいファイルをコピー
-COPY ./docker/python/${PYTHON_VERSION}/pyproject.toml ./docker/python/${PYTHON_VERSION}/poetry.lock /workspaces/DataLab_Python/
+COPY ./docker/python/${PYTHON_VERSION}/pyproject.toml /workspaces/lab_template/docker/python/${PYTHON_VERSION}/pyproject.toml
+COPY ./docker/python/${PYTHON_VERSION}/poetry.lock /workspaces/lab_template/docker/python/${PYTHON_VERSION}/poetry.lock
+
+# シンボリックリンクの作成
+RUN ln -s /workspaces/lab_template/docker/python/${PYTHON_VERSION}/pyproject.toml /workspaces/lab_template/pyproject.toml && \
+    ln -s /workspaces/lab_template/docker/python/${PYTHON_VERSION}/poetry.lock /workspaces/lab_template/poetry.lock
+
 
 RUN poetry config virtualenvs.create false \
     && poetry install --no-interaction --no-ansi --no-dev
@@ -22,9 +28,9 @@ RUN apt-get update \
     && apt-get install npm -y \
     && update-alternatives --install /usr/bin/node node /usr/bin/nodejs 10
 
-COPY package.json package-lock.json* /workspaces/DataLab_Python/
+COPY package.json package-lock.json* /workspaces/lab_template/
 
 RUN npm install
 
 
-COPY . /workspaces/DataLab_Python
+COPY . /workspaces/lab_template
