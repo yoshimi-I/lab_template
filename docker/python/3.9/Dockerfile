@@ -4,6 +4,16 @@ ENV PYTHON_VERSION=3.9
 
 WORKDIR /workspaces/lab_template
 
+# 必要なパッケージのインストール
+RUN apt-get update && apt-get install -y \
+    gcc \
+    python3-dev \
+    nodejs \
+    npm \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+# Poetryのインストール
 RUN pip install poetry
 
 # 既存のファイルを削除
@@ -18,19 +28,16 @@ COPY ./docker/python/${PYTHON_VERSION}/poetry.lock /workspaces/lab_template/dock
 RUN ln -s /workspaces/lab_template/docker/python/${PYTHON_VERSION}/pyproject.toml /workspaces/lab_template/pyproject.toml && \
     ln -s /workspaces/lab_template/docker/python/${PYTHON_VERSION}/poetry.lock /workspaces/lab_template/poetry.lock
 
+# Poetryを使用して依存関係のインストール
 RUN poetry config virtualenvs.create false \
-    && poetry lock --no-update \
-    && poetry install --no-interaction --no-ansi
+    && poetry install --no-interaction --no-ansi --no-dev
 
-# npm czを使いたいのでnodeを入れる
-RUN apt-get update \
-    && apt-get install nodejs -y \
-    && apt-get install npm -y \
-    && update-alternatives --install /usr/bin/node node /usr/bin/nodejs 10
+# node.jsの設定
+RUN update-alternatives --install /usr/bin/node node /usr/bin/nodejs 10
 
+# npmパッケージのインストール
 COPY package.json package-lock.json* /workspaces/lab_template/
-
 RUN npm install
 
-
+# アプリケーションファイルのコピー
 COPY . /workspaces/lab_template
