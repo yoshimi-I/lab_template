@@ -9,6 +9,7 @@ packages = [{include = "3"}]
 [tool.poetry.dependencies]
 python = "^3.10"
 ruff = "^0.2.2"
+ipykernel = "^6.29.4"
 
 [build-system]
 requires = ["lint.poetry-core"]
