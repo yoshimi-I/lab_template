@@ -139,5 +139,5 @@ https://www.loom.com/share/b37d7085457d4e81ba86997f961f9c15
   3. 一番上のものを選ぶ
     - このとき```/usr/local/bin/python```になっていればOK
 
-  - 以下の動画を参考にしてください
+- 以下の動画を参考にしてください
 https://www.loom.com/share/02eb6b28b7f04e7cb649e786c76571c3
