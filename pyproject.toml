@@ -1,13 +1,13 @@
 [tool.poetry]
-name = "3-12"
+name = "3-10"
 version = "0.1.0"
 description = ""
 authors = ["yoshimi-I <iwatsuki.443@outlook.com>"]
-readme = "../../../README.md"
+readme = "README.md"
 packages = [{include = "3"}]
 
 [tool.poetry.dependencies]
-python = "^3.12"
+python = "^3.10"
 ruff = "^0.2.2"
 ipykernel = "^6.29.4"
 
