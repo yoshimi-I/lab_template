@@ -2,9 +2,13 @@
 // README at: https://github.com/devcontainers/templates/tree/main/src/python
 {
 	"name": "Python",
+  "runArgs": ["--network=host"],
 	"build": {
 		"context": "..",
-		"dockerfile": "../docker/python/3.9/Dockerfile"
+    "args": {
+      "BUILDKIT_INLINE_CACHE": "1"
+    },
+		"dockerfile": "../docker/python/3.12/Dockerfile"
 	},
   // If you want to use GPU, uncomment the following
 	// "runArgs": [
@@ -18,8 +22,8 @@
 	// },
 
   "mounts": [
-    "source=${localWorkspaceFolder}/docker/python/3.9/pyproject.toml,target=/workspaces/lab_template/pyproject.toml,type=bind,consistency=cached",
-    "source=${localWorkspaceFolder}/docker/python/3.9/poetry.lock,target=/workspaces/lab_template/poetry.lock,type=bind,consistency=cached",
+    "source=${localWorkspaceFolder}/docker/python/3.12/pyproject.toml,target=/workspaces/lab_template/pyproject.toml,type=bind,consistency=cached",
+    "source=${localWorkspaceFolder}/docker/python/3.12/poetry.lock,target=/workspaces/lab_template/poetry.lock,type=bind,consistency=cached",
     "source=${localEnv:HOME}/.ssh,target=/root/.ssh,type=bind"
   ],
 	"customizations": {
