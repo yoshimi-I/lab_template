@@ -82,7 +82,7 @@
 ```
 ## まずはじめに<a id="anchor2"></a>
 ### 1. いくつか入れて欲しいものがあるのでインストールする
-1. Docker 
+1. Docker
 - [windowsはここからインストール](https://docs.docker.jp/desktop/install/windows-install.html#id4)
 - [Macの人はここからインストール](https://docs.docker.jp/desktop/install/mac-install.html)
 2. VScode or Cursor
@@ -106,6 +106,8 @@ https://www.loom.com/share/f8eb2d101e114cbc9d5f6352e1e1bb10?sid=fc6feab7-959a-4b
 1. 左下の![Alt text](image.png)のマークを押す
 2. その後 **コンテナーで再度開く** を押す
 以上のコマンドによりPythonを起動
+- 詳しくは以下の動画を参考にしてください
+https://www.loom.com/share/b416cd77a2514e278c8e120e99ab9cf5
 ## その他各コマンドの説明<a id="anchor4"></a>
 ### パッケージの追加
 - 本来は**pip install** などを利用するが,今回はpoetryを採用した
