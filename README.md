@@ -98,13 +98,15 @@
 ```git clone フォークするリポジトリ```
 **以下の動画を参考にしてcloneしてください**
 https://www.loom.com/share/f8eb2d101e114cbc9d5f6352e1e1bb10?sid=fc6feab7-959a-4be1-b7fd-4a02985c8836
-## pythonの起動方法<a id="anchor3"></a>
+## 実験環境の作り方<a id="anchor3"></a>
 ### 1. まずはPythonのバージョンを選択
 - デフォルトは3.12になっています
 - 変更したい場合は[その他各コマンドの説明](#anchor4)を参照
 ### 2. pythonをDockerを用いて起動
 1. 左下の![Alt text](image.png)のマークを押す
 2. その後 **コンテナーで再度開く** を押す
+### 3. ターミナルで```npm ci```を押す
+- これを行うことで,必要なnpmのパッケージをインストール
 以上のコマンドによりPythonを起動
 - 詳しくは以下の動画を参考にしてください
 https://www.loom.com/share/b416cd77a2514e278c8e120e99ab9cf5
