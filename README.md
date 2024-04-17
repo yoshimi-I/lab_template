@@ -2,7 +2,7 @@
 
 <samp>
 
-# python research environment
+# python research environment rye
 
 **Welcome to python research environment!!**
 
@@ -14,6 +14,10 @@
 - こちらは研究で使うpythonの環境になっております
   - 個人で使っていた環境をオープンソースにしたものになります
 - アクシデントやトラブルがあった場合は岩月までお願いします
+
+## 環境
+- こちらはryeで環境を作っています
+- poetryでの開発環境はpoetryブランチを参照ください
 
 ## 目次
 1. [ディレクトリ構成](#anchor1)

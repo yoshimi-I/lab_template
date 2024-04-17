@@ -8,7 +8,7 @@
     "args": {
       "BUILDKIT_INLINE_CACHE": "1"
     },
-		"dockerfile": "../docker/python/3.12/Dockerfile"
+		"dockerfile": "Dockerfile"
 	},
   // If you want to use GPU, uncomment the following
 	// "runArgs": [
@@ -22,8 +22,6 @@
 	// },
 
   "mounts": [
-    "source=${localWorkspaceFolder}/docker/python/3.12/pyproject.toml,target=/workspaces/lab_template/pyproject.toml,type=bind,consistency=cached",
-    "source=${localWorkspaceFolder}/docker/python/3.12/poetry.lock,target=/workspaces/lab_template/poetry.lock,type=bind,consistency=cached",
     "source=${localEnv:HOME}/.ssh,target=/root/.ssh,type=bind"
   ],
 	"customizations": {
@@ -57,6 +55,7 @@
         "pmneo.tsimporter",
         "qwtel.sqlite-viewer",
         "rangav.vscode-thunder-client",
+        "kevinrose.vsc-python-indent",
         "redhat.vscode-yaml",
         "ritwickdey.LiveServer",
         "ryu1kn.partial-diff",
@@ -140,5 +139,6 @@
         "hediet.vscode-drawio.resizeImages": null
       }
 		}
-	}
+	},
+  "remoteUser": "vscode"
 }
