@@ -1,3 +1,5 @@
+
+
 <div align="center">
 
 <samp>
@@ -105,7 +107,7 @@ https://www.loom.com/share/f8eb2d101e114cbc9d5f6352e1e1bb10?sid=fc6feab7-959a-4b
 ### 2. pythonをDockerを用いて起動
 1. 左下の![Alt text](image.png)のマークを押す
 2. その後 **コンテナーで再度開く** を押す
-### 3. ターミナルで```npm ci```を押す
+### 3. ターミナルで```npm ci```を実行する
 - これを行うことで,必要なnpmのパッケージをインストール
 以上のコマンドによりPythonを起動
 - 詳しくは以下の動画を参考にしてください
